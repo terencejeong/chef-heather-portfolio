@@ -31,7 +31,7 @@ const Footer = styled.footer`
   align-items: center;
 `;
 
-export const HomeStyles = {
+export const SiteLayoutStyles = {
   Container,
   Title,
   Main,
