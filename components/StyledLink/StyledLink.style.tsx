@@ -13,4 +13,8 @@ export default `
     outline: none;
     border: 0;
   }
+
+  &.recipe {
+    font-family: 'Merriweather Regular';
+  }
   `;

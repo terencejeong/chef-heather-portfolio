@@ -1,18 +1,19 @@
 import { createGlobalStyle } from 'styled-components';
+import SiteLayout from 'layouts/SiteLayout/SiteLayout';
+import { GlobalStyleRules } from 'styles/Global.styles';
+import '../styles/globals.css';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-`;
+const GlobalStyle = createGlobalStyle`${GlobalStyleRules}`;
 
 function MyApp({ Component, pageProps }) {
+  const Layout = Component.layout || SiteLayout;
+
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
