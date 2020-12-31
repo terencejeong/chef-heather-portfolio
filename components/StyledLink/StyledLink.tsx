@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import LinkStyles from './StyledLink.style';
 
-const StyledLink = ({
+const LinkComponent = ({
   as,
   children,
   className,
@@ -18,6 +18,6 @@ const StyledLink = ({
   </Link>
 );
 
-export default styled(StyledLink)`
+export const StyledLink = styled(LinkComponent)`
   ${LinkStyles}
 `;

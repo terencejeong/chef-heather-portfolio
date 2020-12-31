@@ -1,9 +1,10 @@
 import Head from 'next/head';
+import { Header } from 'components';
 import { SiteLayoutStyles } from './SiteLayout.styles';
 
 const SiteLayout = ({ children }) => {
   return (
-    <SiteLayoutStyles.Container>
+    <>
       <Head>
         <title>Chef Heather Jeong</title>
         <link rel='icon' href='/favicon.ico' />
@@ -44,9 +45,10 @@ const SiteLayout = ({ children }) => {
           crossOrigin=''
         />
       </Head>
+      <Header />
       <SiteLayoutStyles.Main>{children}</SiteLayoutStyles.Main>
       <SiteLayoutStyles.Footer>This is the footer</SiteLayoutStyles.Footer>
-    </SiteLayoutStyles.Container>
+    </>
   );
 };
 
