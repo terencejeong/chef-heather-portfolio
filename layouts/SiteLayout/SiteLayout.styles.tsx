@@ -1,13 +1,7 @@
 import styled from 'styled-components';
+import { respondTo } from 'styles/utils';
 
-const Container = styled.div`
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
+const Container = styled.div``;
 const Main = styled.main`
   padding: 5rem 0;
   flex: 1;

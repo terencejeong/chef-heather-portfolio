@@ -17,4 +17,15 @@ export default `
   &.recipe {
     font-family: 'Merriweather Regular';
   }
+
+  &.logo {
+    & img {
+      max-height: 158px;
+      max-width: 632px;
+      width: 100%;
+      height: 100%;
+      display: block;
+      margin: 0 auto;
+    } 
+  }
   `;

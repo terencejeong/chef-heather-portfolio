@@ -7,7 +7,6 @@ const GlobalStyle = createGlobalStyle`${GlobalStyleRules}`;
 
 function MyApp({ Component, pageProps }) {
   const Layout = Component.layout || SiteLayout;
-
   return (
     <>
       <GlobalStyle />

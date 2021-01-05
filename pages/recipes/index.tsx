@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import StyledLink from 'components/StyledLink/StyledLink';
+import { StyledLink } from 'components';
 import { getAllRecipes } from 'lib/api/recipeApi';
 
 export default function Recipes({ recipes }) {
