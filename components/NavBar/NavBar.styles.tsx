@@ -1,39 +1,62 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { colors } from 'styles/constants/constants';
 import { respondTo } from 'styles/utils';
+
+const sharedBarStyle = `
+  width: 20px;
+  height: 2px;
+  background-color: ${colors.white};
+  margin: 4px 0;
+  transition: 0.4s;
+`;
 
 const Nav = styled.nav`
   font-family: 'Lora Regular';
-  ${respondTo.sm`
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 20px;
-    max-width: 1024px;
-    height: 50px;
-    margin: 0 auto;
-    margin-top: 20px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-  `}
+  ${respondTo.sm``}
 `;
 
 const List = styled.ul`
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: space-between;
   & li {
-    padding: 0 20px;
     list-style: none;
-    display: inline-block;
   }
 
   & li:first-child {
     padding: 0;
-    padding-right: 20px;
   }
+`;
+
+const Hamburger = styled.div`
+  display: inline-block;
+  cursor: pointer;
+`;
+
+const SideNav: any = styled.nav`
+  position: absolute;
+  height: 100%;
+  width: ${({ open }: { open: boolean }) => (open ? '100%' : '0')};
+  top: 0; /* Stay at the top */
+  left: 0; /* Move to left */
+  z-index: 10;
+  background-color: ${colors.white};
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s;
+  ${respondTo.md`
+    max-width: 320px;
+  `}
+`;
+
+const Bar = styled.div`
+  ${sharedBarStyle}
 `;
 
 export const NavBarStyles = {
   Nav,
   List,
+  Hamburger,
+  Bar,
+  SideNav,
 };

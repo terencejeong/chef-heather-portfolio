@@ -4,3 +4,8 @@ export const breakpoints = {
   md: '992px',
   lg: '1200px',
 };
+
+export const colors = {
+  black: '#000000',
+  white: '#FFFFFF',
+};
