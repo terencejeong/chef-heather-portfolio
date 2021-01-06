@@ -37,6 +37,7 @@ const Hamburger = styled.div`
 const SideNav: any = styled.nav`
   position: absolute;
   height: 100%;
+  width: 100%;
   padding: 20px;
   transform: ${({ open }: { open: boolean }) =>
     open ? 'translateX(0)' : 'translateX(-100%)'};
@@ -47,7 +48,6 @@ const SideNav: any = styled.nav`
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.3s;
   ${respondTo.md`
-    width: 100%;
     max-width: 320px;
     transition: 0.5s;
   `}
