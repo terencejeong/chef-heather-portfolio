@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
 import markdownToHtml from 'lib/markdownToHtml';
-import { getRecipeBySlug, getAllRecipes } from 'lib/api/recipeApi';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { IRecipe } from 'lib/api/recipeApi.types';
+import { fetchEntries, fetchEntryBySlug } from 'lib/api/recipe';
 
 type RecipeProps = {
   content: string;
@@ -19,12 +20,9 @@ export default function Recipe({ recipe }: { recipe: RecipeProps }) {
 }
 
 export async function getStaticProps({ params }) {
-  const recipe: IRecipe = getRecipeBySlug(params.slug, [
-    'content',
-    'slug',
-    'date',
-  ]);
-  const content = await markdownToHtml(recipe.content || '');
+  const recipe = await fetchEntryBySlug(params.slug)
+
+  const content = await documentToHtmlString(recipe.content || '')
   return {
     props: {
       recipe: {
@@ -42,7 +40,8 @@ export async function getStaticProps({ params }) {
  * Next.js will statically pre-render all the paths specified by getStaticPaths.
  */
 export async function getStaticPaths() {
-  const recipes = getAllRecipes(['slug']);
+  const recipes = await fetchEntries();
+
   return {
     paths: recipes.map((recipe: any) => {
       return {

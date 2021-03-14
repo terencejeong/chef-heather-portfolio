@@ -1,14 +1,15 @@
 import { StyledLink } from 'components';
-import { getAllRecipes } from 'lib/api/recipeApi';
+import { fetchEntries } from 'lib/api/recipe';
 
 export default function Recipes({ recipes }) {
+  console.log({ recipes })
   return (
     <>
       <h1>Heathers Recipes</h1>
       <section>
         {recipes.map((recipe) => (
           <StyledLink
-            href={`/recipes/${recipe.slug}`}
+            href={`/recipes/${recipe.id}`}
             forwardedAs={`/recipes/${recipe.slug}`}
             className='recipe'
             key={recipe.slug}
@@ -22,6 +23,6 @@ export default function Recipes({ recipes }) {
 }
 
 export async function getStaticProps() {
-  const recipes = getAllRecipes(['slug', 'content', 'date', 'title']);
+  const recipes = await fetchEntries();
   return { props: { recipes } };
 }
