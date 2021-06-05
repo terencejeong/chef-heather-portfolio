@@ -2,7 +2,6 @@ import { StyledLink } from 'components';
 import { fetchEntries } from 'lib/api/recipe';
 
 export default function Recipes({ recipes }) {
-  console.log({ recipes })
   return (
     <>
       <h1>Heathers Recipes</h1>

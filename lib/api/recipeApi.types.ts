@@ -1,9 +1,11 @@
 export interface IRecipe {
   id: string;
+  description: string;
   title: string;
   slug: string;
-  date?: string;
+  date: string;
   content: string;
+  image: any;
 }
 
 export interface IRecipeContent {

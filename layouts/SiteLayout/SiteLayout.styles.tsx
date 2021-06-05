@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import { colors } from 'styles/constants/constants';
 import { respondTo } from 'styles/utils';
 
 const Container = styled.div``;
 const Main = styled.main`
-  padding: 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
