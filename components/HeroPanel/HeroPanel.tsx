@@ -4,13 +4,14 @@ import styled from 'styled-components';
 import { HeroPanelStyles } from './HeroPanel.styles';
 
 const {
+	Article,
 	ImageWrapper,
 	Image,
 	TextWrapper,
+	LatestWrapper,
 	Text,
-	DescriptionWrapper,
 	Header,
-	ReadMore
+	ReadMore,
 } = HeroPanelStyles;
 
 const ReadMoreButton = styled(StyledLink)`
@@ -27,7 +28,10 @@ type HeroImageProps = {
 
 export const HeroPanel: React.FC<HeroImageProps> = ({ src, description, title, id, slug }) => {
 	return (
-		<>
+		<Article>
+			<TextWrapper>
+				<Header>{title}</Header>
+			</TextWrapper>
 			<ImageWrapper>
 				<Link
 					href={`/recipes/${id}`}
@@ -35,21 +39,20 @@ export const HeroPanel: React.FC<HeroImageProps> = ({ src, description, title, i
 				>
 					<Image src={src} />
 				</Link>
-				<TextWrapper>
+				<LatestWrapper>
 					<Text>Latest & Greatest</Text>
-				</TextWrapper>
+				</LatestWrapper>
 			</ImageWrapper>
-			<DescriptionWrapper>
-				<Header>{title}</Header>
+			<TextWrapper>
 				<Text isDescription>{description}</Text>
 				<ReadMoreButton
 					href={`/recipes/${id}`}
 					forwardedAs={`/recipes/${slug}`}
+					key={slug}
 				>
-					Continue Reading
+					Read more
 				</ReadMoreButton>
-			</DescriptionWrapper>
-
-		</>
+			</TextWrapper>
+		</Article>
 	)
 };

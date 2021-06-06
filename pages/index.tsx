@@ -1,8 +1,7 @@
 import drop from 'lodash/drop';
 import head from 'lodash/head';
 import { fetchEntries } from 'lib/api/recipe';
-import { StyledLink } from 'components';
-import { HeroPanel } from 'components/HeroPanel/HeroPanel';
+import { StyledLink, HeroPanel, LatestRecipes } from 'components';
 import { IRecipe } from 'lib/api/recipeApi.types';
 import { HomeStyles } from 'styles/Home.styles';
 
@@ -15,11 +14,15 @@ export default function Home({ recipes, latestRecipe: { description, title, id, 
   return (
     <>
       <HeroPanel
-        src={head(rest.image)?.fields?.file?.url}
+        src={rest.image[1]?.fields?.file?.url}
         description={description}
         title={title}
         id={id}
         slug={slug}
+      />
+      <LatestRecipes
+        title="New Recipes"
+        recipes={recipes}
       />
       {/* <HomeStyles.Title>Omma's Recipes</HomeStyles.Title> */}
       {/* <div>

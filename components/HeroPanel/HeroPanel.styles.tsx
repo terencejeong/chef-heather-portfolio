@@ -5,9 +5,14 @@ type TextProps = {
 	isDescription?: boolean;
 }
 
+const Article = styled.article`
+	margin-bottom: 20px;
+	padding: 0 10px;
+`;
+
 const ImageWrapper = styled.div`
-	width: 100%;
 	position: relative;
+	width: 100%;
 `;
 
 const Image = styled.img`
@@ -15,49 +20,60 @@ const Image = styled.img`
 	height: auto;
 `;
 
-const TextWrapper = styled.div`
+const LatestWrapper = styled.div`
 	position: absolute;
-	bottom: 4px;
-	left: 2%;
+	top: 0;
+	right: 0;
 	text-align: center;
-	color: ${colors.white};
-	background: ${colors.blue};
+	background: ${colors.yellow};
 `;
 
-const DescriptionWrapper = styled.div`
-	width: 100 %;
-	padding: 0 10px;
+const TextWrapper = styled.div`
+	position: relative;
+	width: 100%;
 	// background: linear-gradient(to bottom left, ${colors.white} 50%, ${colors.grey} 50%);
 `;
 
 const Header = styled.h2`
-	margin: 0;
-	font-family: 'Playfair Bold';
+	width: 100%;
+	border-bottom: 5px solid #343434;
+	padding: 10px 0 5px;
+	margin: 10px 0;
+	color: #343434;
 	text-align: left;
 	font-size: 28px;
+	font-family: 'Lora Bold';
 `;
 
 const Text = styled.p<TextProps>`
 	margin: 0;
-	padding: ${({ isDescription }) => isDescription ? '12px 0' : '2px 10px'};
-	font-family: ${({ isDescription }) => isDescription ? 'Merriweather Light' : 'Playfair Regular'};
+	padding: ${({ isDescription }) => isDescription ? '5px 0' : '4px 15px'};
+	font-family: ${({ isDescription }) => isDescription ? 'Playfair Regular' : 'Lora Regular'};
 	font-size: 14px;
+	color: ${({ isDescription }) => isDescription ? colors.grey : colors.black};
 `;
 
 const ReadMore = `
-	font-family: 'Playfair Regular';
+	font-family: 'Playfair Italic';
 	color: #EDB654;
-	font-size: 18px;
-	text-decoration: none;
-	text-align: right;
+	font-size: 16px;
+	text-decoration: underline;
+	color: ${colors.grey};
+`
+
+const TransparentText = styled.span`
+	color: transparent;
+	-webkit-text-stroke: 1px ${colors.black};
 `
 
 export const HeroPanelStyles = {
+	Article,
 	ImageWrapper,
 	Image,
+	LatestWrapper,
 	TextWrapper,
-	DescriptionWrapper,
 	Header,
 	Text,
 	ReadMore,
+	TransparentText
 }

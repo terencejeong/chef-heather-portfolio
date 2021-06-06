@@ -10,8 +10,7 @@ const client = require('contentful').createClient({
 
 export async function fetchEntries() {
   const entries = await client.getEntries();
-  if (entries.items)
-    return entries.items.map((post) => ({ id: post.sys.id, ...post.fields }));
+  if (entries.items) return entries.items.map((post) => ({ id: post.sys.id, ...post.fields }));
   console.log(`Error getting Entries for ${entries}.`);
 }
 

@@ -11,5 +11,5 @@ export const colors = {
   blue: '#0047A0',
   red: '#CD2E3A',
   yellow: '#FFCF02',
-  grey: '#d3d3d3',
+  grey: 'rgba(18,18,18,.71)',
 };
