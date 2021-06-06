@@ -36,10 +36,10 @@ const TextWrapper = styled.div`
 
 const Header = styled.h2`
 	width: 100%;
-	border-bottom: 5px solid #343434;
+	border-bottom: 5px solid ${colors.red};
 	padding: 10px 0 5px;
 	margin: 10px 0;
-	color: #343434;
+	color: ${colors.black};
 	text-align: left;
 	font-size: 28px;
 	font-family: 'Lora Bold';

@@ -11,7 +11,7 @@ const SiteLayout = ({ children }) => {
       </Head>
       <Header />
       <SiteLayoutStyles.Main>{children}</SiteLayoutStyles.Main>
-      {/* <SiteLayoutStyles.Footer>This is the footer</SiteLayoutStyles.Footer> */}
+      <SiteLayoutStyles.Footer>This is the footer</SiteLayoutStyles.Footer>
     </>
   );
 };
