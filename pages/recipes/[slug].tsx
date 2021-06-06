@@ -1,7 +1,6 @@
-import { useRouter } from 'next/router';
-import markdownToHtml from 'lib/markdownToHtml';
-import { getRecipeBySlug, getAllRecipes } from 'lib/api/recipeApi';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { IRecipe } from 'lib/api/recipeApi.types';
+import { fetchEntries, fetchEntryBySlug } from 'lib/api/recipe';
 
 type RecipeProps = {
   content: string;
@@ -10,7 +9,6 @@ type RecipeProps = {
 };
 
 export default function Recipe({ recipe }: { recipe: RecipeProps }) {
-  const router = useRouter();
   return (
     <section>
       <div dangerouslySetInnerHTML={{ __html: recipe.content }}></div>
@@ -18,13 +16,12 @@ export default function Recipe({ recipe }: { recipe: RecipeProps }) {
   );
 }
 
+// TODO: Handle error case.
 export async function getStaticProps({ params }) {
-  const recipe: IRecipe = getRecipeBySlug(params.slug, [
-    'content',
-    'slug',
-    'date',
-  ]);
-  const content = await markdownToHtml(recipe.content || '');
+  // Fetch the recipe based on the slug name.
+  const recipe = await fetchEntryBySlug(params.slug);
+  // Take recipe and convert to HTML string.
+  const content = await documentToHtmlString(recipe.content || '');
   return {
     props: {
       recipe: {
@@ -34,6 +31,7 @@ export async function getStaticProps({ params }) {
     },
   };
 }
+
 /**
  * Specify dynamic routes to pre-render based on data.
  * If a page has dynamic routes (documentation) and uses getStaticProps it needs to define a list of paths
@@ -42,9 +40,9 @@ export async function getStaticProps({ params }) {
  * Next.js will statically pre-render all the paths specified by getStaticPaths.
  */
 export async function getStaticPaths() {
-  const recipes = getAllRecipes(['slug']);
+  const recipes = await fetchEntries();
   return {
-    paths: recipes.map((recipe: any) => {
+    paths: recipes.map((recipe: IRecipe) => {
       return {
         params: {
           slug: recipe.slug,

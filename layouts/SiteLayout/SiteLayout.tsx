@@ -6,44 +6,8 @@ const SiteLayout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Chef Heather Jeong</title>
+        <title>Omma's Recipes</title>
         <link rel='icon' href='/favicon.ico' />
-        <link
-          rel='preload'
-          href='/fonts/Merriweather/Merriweather-Regular.ttf'
-          as='font'
-          crossOrigin=''
-        />
-        <link
-          rel='preload'
-          href='/fonts/Merriweather/Merriweather-Bold.ttf'
-          as='font'
-          crossOrigin=''
-        />
-        <link
-          rel='preload'
-          href='/fonts/Merriweather/Merriweather-Medium.ttf'
-          as='font'
-          crossOrigin=''
-        />
-        <link
-          rel='preload'
-          href='/fonts/Lora/static/Lora-Bold.ttf'
-          as='font'
-          crossOrigin=''
-        />
-        <link
-          rel='preload'
-          href='/fonts/Lora/static/Lora-Regular.ttf'
-          as='font'
-          crossOrigin=''
-        />
-        <link
-          rel='preload'
-          href='/fonts/Lora/static/Lora-Medium.ttf'
-          as='font'
-          crossOrigin=''
-        />
       </Head>
       <Header />
       <SiteLayoutStyles.Main>{children}</SiteLayoutStyles.Main>

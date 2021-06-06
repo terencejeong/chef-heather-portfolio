@@ -19,7 +19,7 @@ const Main = styled.main`
 
 const Title = styled.h1`
   font-size: 50px;
-  font-family: 'Lora Bold';
+  font-family: 'Playfair Bold';
 `;
 
 const Footer = styled.footer`
