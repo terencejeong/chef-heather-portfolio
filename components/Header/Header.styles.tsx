@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { respondTo } from 'styles/utils';
 import { colors } from 'styles/constants/constants';
 
 const Header = styled.header`
