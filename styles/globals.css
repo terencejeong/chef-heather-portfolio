@@ -1,69 +1,5 @@
 /* Fonts */
 @font-face {
-  font-family: 'Dancing Script Regular';
-  src: url('/fonts/Dancing_Script/DancingScript-Regular.ttf');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Dancing Script Medium';
-  src: url('/fonts/Dancing_Script/DancingScript-Medium.ttf');
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Dancing Script Bold';
-  src: url('/fonts/Dancing_Script/DancingScript-Bold.ttf');
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Josefin Sans Thin';
-  src: url('/fonts/Josefin_Sans/static/JosefinSans-Thin.ttf');
-  font-style: normal;
-  font-weight: 100;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Josefin Sans Light';
-  src: url('/fonts/Josefin_Sans/static/JosefinSans-Light.ttf');
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Josefin Sans Regular';
-  src: url('/fonts/Josefin_Sans/static/JosefinSans-Regular.ttf');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Josefin Sans Medium';
-  src: url('/fonts/Josefin_Sans/static/JosefinSans-Medium.ttf');
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Josefin Sans Bold';
-  src: url('/fonts/Josefin_Sans/static/JosefinSans-Bold.ttf');
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Playfair Regular';
   src: url('/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf');
   font-style: normal;
@@ -94,7 +30,6 @@
   font-weight: 700;
   font-display: swap;
 }
-
 
 @font-face {
   font-family: 'Lora Regular';
@@ -151,4 +86,3 @@
   font-weight: 400;
   font-display: swap;
 }
-
