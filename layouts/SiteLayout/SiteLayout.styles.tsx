@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { colors } from 'styles/constants/constants';
-import { respondTo } from 'styles/utils';
+// import { colors } from 'styles/constants/constants';
+// import { respondTo } from 'styles/utils';
 
 const Container = styled.div``;
 const Main = styled.main`

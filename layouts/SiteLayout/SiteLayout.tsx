@@ -7,7 +7,61 @@ const SiteLayout = ({ children }) => {
     <>
       <Head>
         <title>Omma's Recipes</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="preload"
+          href="/fonts/Playfair_Display/PlayfairDisplay-Italic.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Playfair_Display/PlayfairDisplay-Medium.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Lora/static/Lora-Regular.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Lora/static/Lora-Medium.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Lora/static/Lora-Bold.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Merriweather/Merriweather-Regular.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Merriweather/Merriweather-Bold.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Merriweather/Merriweather-Light.ttf"
+          as="font"
+          crossOrigin=""
+        />
       </Head>
       <Header />
       <SiteLayoutStyles.Main>{children}</SiteLayoutStyles.Main>

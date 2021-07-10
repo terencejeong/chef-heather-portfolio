@@ -11,18 +11,14 @@ const { Nav, List } = NavBarStyles;
 const HomeIcon = styled(StyledLink)`
   color: white;
   font-size: 14px;
-  & img {
-    height: 25px;
-    width: auto;
-  }
-`
+`;
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const handleClick = useCallback(() => setIsOpen(!isOpen), [isOpen]);
 
   return (
-    <Nav role='navigation'>
+    <Nav role="navigation">
       <List>
         <li>
           <Hamburger handleIsOpen={handleClick} />
@@ -30,11 +26,8 @@ export const NavBar = () => {
         </li>
         <li>
           {/* Turn into actual icon */}
-          <HomeIcon
-            href="/"
-            forwardedAs="/"
-          >
-            <img src='/taegeuk.svg' alt='next' />
+          <HomeIcon href="/" forwardedAs="/">
+            <Image src="/taegeuk.svg" alt="next" height={25} width={100} />
           </HomeIcon>
         </li>
         <li>
