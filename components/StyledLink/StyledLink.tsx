@@ -7,6 +7,7 @@ export type LinkComponentProps = {
   children: JSX.Element | JSX.Element[];
   className?: string;
   href?: string;
+  forwardedAs?: string;
 };
 
 const LinkComponent: React.FunctionComponent<LinkComponentProps> = ({
@@ -20,6 +21,6 @@ const LinkComponent: React.FunctionComponent<LinkComponentProps> = ({
   </Link>
 );
 
-export const StyledLink = styled(LinkComponent)`
+export const StyledLink: any = styled(LinkComponent)<LinkComponentProps>`
   ${LinkStyles}
 `;
