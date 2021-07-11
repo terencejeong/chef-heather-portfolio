@@ -1,3 +1,4 @@
+import React from 'react';
 import { NavBarStyles } from '../NavBar.styles';
 import { CrossIcon } from './CrossIcon';
 
