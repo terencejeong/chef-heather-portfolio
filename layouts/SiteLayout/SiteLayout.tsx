@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Script from 'next/script';
 import { Header } from 'components';
 import { SiteLayoutStyles } from './SiteLayout.styles';
 
@@ -63,7 +62,7 @@ const SiteLayout = ({ children }) => {
           as="font"
           crossOrigin=""
         />
-        <Script
+        <script
           strategy="afterInteractive"
         >
           {
@@ -74,14 +73,14 @@ const SiteLayout = ({ children }) => {
                     })
                     (window, document, 'script', 'https://assets.production.linktr.ee/ltpixel/ltpix.min.js?t=' + 864e5*Math.ceil(new Date/864e5), 'lti')
           }
-        </Script>
-        <Script
+        </script>
+        <script
           strategy="afterInteractive"
         >
         { lti('init', 'LTU-abba3c96-170a-4772-a39f-2781338d25b9')
           lti('pageloaded')
         }
-        </Script>
+        </script>
       </Head>
       <Header />
       <SiteLayoutStyles.Main>{children}</SiteLayoutStyles.Main>
