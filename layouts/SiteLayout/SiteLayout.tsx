@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Head from 'next/head';
 import { Header } from 'components';
 import { SiteLayoutStyles } from './SiteLayout.styles';
@@ -62,6 +63,7 @@ const SiteLayout = ({ children }) => {
           as="font"
           crossOrigin=""
         />
+        
         <script>
           {
                     (function (l, i, n, k, t, r, ee) {
@@ -73,7 +75,8 @@ const SiteLayout = ({ children }) => {
           }
         </script>
         <script>
-        { lti('init', 'LTU-abba3c96-170a-4772-a39f-2781338d25b9')
+        {
+          lti('init', 'LTU-abba3c96-170a-4772-a39f-2781338d25b9')
           lti('pageloaded')
         }
         </script>
