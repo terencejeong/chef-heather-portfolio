@@ -62,9 +62,7 @@ const SiteLayout = ({ children }) => {
           as="font"
           crossOrigin=""
         />
-        <script
-          strategy="afterInteractive"
-        >
+        <script>
           {
                     (function (l, i, n, k, t, r, ee) {
                       l[t] = l[t] || function () { (l[t].q = l[t].q || []).push(arguments) },
@@ -74,9 +72,7 @@ const SiteLayout = ({ children }) => {
                     (window, document, 'script', 'https://assets.production.linktr.ee/ltpixel/ltpix.min.js?t=' + 864e5*Math.ceil(new Date/864e5), 'lti')
           }
         </script>
-        <script
-          strategy="afterInteractive"
-        >
+        <script>
         { lti('init', 'LTU-abba3c96-170a-4772-a39f-2781338d25b9')
           lti('pageloaded')
         }
