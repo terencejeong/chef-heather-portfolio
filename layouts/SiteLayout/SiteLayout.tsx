@@ -63,22 +63,35 @@ const SiteLayout = ({ children }) => {
           as="font"
           crossOrigin=""
         />
-        
+
         <script>
-          {
-                    (function (l, i, n, k, t, r, ee) {
-                      l[t] = l[t] || function () { (l[t].q = l[t].q || []).push(arguments) },
-                      l[t].l = 1 * new Date(); r = i.createElement(n); ee = i.getElementsByTagName(n)[0];
-                      r.async = 1; r.src = k; ee.parentNode.insertBefore(r, ee)
-                    })
-                    (window, document, 'script', 'https://assets.production.linktr.ee/ltpixel/ltpix.min.js?t=' + 864e5*Math.ceil(new Date/864e5), 'lti')
-          }
+          {(function (l, i, n, k, t, r, ee) {
+            (l[t] =
+              l[t] ||
+              function () {
+                (l[t].q = l[t].q || []).push(arguments);
+              }),
+              (l[t].l = 1 * new Date());
+            r = i.createElement(n);
+            ee = i.getElementsByTagName(n)[0];
+            r.async = 1;
+            r.src = k;
+            ee.parentNode.insertBefore(r, ee);
+          })(
+            window,
+            document,
+            'script',
+            'https://assets.production.linktr.ee/ltpixel/ltpix.min.js?t=' +
+              864e5 * Math.ceil(new Date() / 864e5),
+            'lti'
+          )}
         </script>
         <script>
-        {
-          lti('init', 'LTU-abba3c96-170a-4772-a39f-2781338d25b9')
-          lti('pageloaded')
-        }
+          {(function () {
+            console.log('hello');
+            window.lti('init', 'LTU-abba3c96-170a-4772-a39f-2781338d25b9');
+            window.localStorageti('pageloaded');
+          })()}
         </script>
       </Head>
       <Header />
