@@ -65,9 +65,9 @@ const SiteLayout = ({ children }) => {
         />
 
         <script>
-          {function () {
+          {(function () {
             if (typeof window !== 'undefined') {
-              console.log('in the script')(function (l, i, n, k, t, r, ee) {
+              (function (l, i, n, k, t, r, ee) {
                 (l[t] =
                   l[t] ||
                   function () {
@@ -88,17 +88,13 @@ const SiteLayout = ({ children }) => {
                 'lti'
               );
             }
-          }}
+          })()}
         </script>
         <script>
           {(function () {
             if (typeof window !== 'undefined') {
-              window.addEventListener('DOMContentLoaded', (event) => {
-                console.log('DOM fully loaded and parsed');
-                console.log('hello');
-                window.lti('init', 'LTU-abba3c96-170a-4772-a39f-2781338d25b9');
-                window.lti('pageloaded');
-              });
+              window.lti('init', 'LTU-abba3c96-170a-4772-a39f-2781338d25b9');
+              window.lti('pageloaded');
             }
           })()}
         </script>
