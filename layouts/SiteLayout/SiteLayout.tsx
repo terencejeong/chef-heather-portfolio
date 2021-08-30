@@ -66,7 +66,7 @@ const SiteLayout = ({ children }) => {
 
         <script>
           {function () {
-            if (typeof window !== undefined) {
+            if (typeof window !== 'undefined') {
               console.log('in the script')(function (l, i, n, k, t, r, ee) {
                 (l[t] =
                   l[t] ||
@@ -92,10 +92,10 @@ const SiteLayout = ({ children }) => {
         </script>
         <script>
           {(function () {
-            if (typeof window !== undefined) {
+            if (typeof window !== 'undefined') {
               console.log('hello');
               window.lti('init', 'LTU-abba3c96-170a-4772-a39f-2781338d25b9');
-              window.localStorageti('pageloaded');
+              window.lti('pageloaded');
             }
           })()}
         </script>
