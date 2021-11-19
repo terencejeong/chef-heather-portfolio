@@ -23,5 +23,5 @@ export default function Recipes({ recipes }) {
 
 export async function getStaticProps() {
   const recipes = await fetchEntries();
-  return { props: { recipes } };
+  return { props: { recipes }, revalidate: 60 };
 }
