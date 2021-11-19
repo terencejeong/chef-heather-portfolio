@@ -50,6 +50,7 @@ export async function getStaticProps() {
         recipes, // If we want to make a copy we would have gone something like [...getRecipes]
         latestRecipe,
       },
+      revalidate: 60
     };
   } catch (e) {
     // Direct the user to a 404 page.
